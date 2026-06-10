@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Mohamad Suhail | Network Administrator & Network Technician — AI-driven automation, Cisco, Windows Server, Linux."/>
+<title>Mohamad Suhail | Network Administrator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --green:#00ff88;--green-dim:#00cc66;--green-glow:rgba(0,255,136,0.15);
+  --bg:#050805;--bg2:#0a0e0a;--bg3:#0f140f;
+  --border:rgba(0,255,136,0.25);--text:#c8d8c8;--text-dim:#6a8a6a;
+  --font:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.7;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--green-dim);border-radius:3px;}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,136,0.015) 2px,rgba(0,255,136,0.015) 4px);pointer-events:none;z-index:9999;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(5,8,5,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-brand{color:var(--green);font-size:14px;font-weight:700;text-decoration:none;text-shadow:0 0 8px var(--green-glow);}
+.nav-brand span{color:var(--text-dim);}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap;}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:13px;padding:4px 0;transition:all 0.3s;position:relative;}
+.nav-links a::before{content:'[';opacity:0;color:var(--green);transform:translateX(8px);transition:all 0.3s;position:absolute;left:-12px;}
+.nav-links a::after{content:']';opacity:0;color:var(--green);transform:translateX(-8px);transition:all 0.3s;position:absolute;right:-12px;}
+.nav-links a:hover{color:var(--green);}
+.nav-links a:hover::before,.nav-links a:hover::after{opacity:1;transform:translateX(0);}
+.nav-hire{background:var(--green)!important;color:#050805!important;font-weight:700;padding:6px 16px!important;border-radius:4px;font-family:var(--font);font-size:12px;text-decoration:none;}
+.nav-hire::before,.nav-hire::after{display:none!important;}
+.nav-hire:hover{background:var(--green-dim)!important;box-shadow:0 0 15px var(--green-glow);}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 2rem 2rem;position:relative;overflow:hidden;}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.07) 1px,transparent 1px);background-size:50px 50px;opacity:0.7;transform:perspective(800px) rotateX(55deg) translateY(-60px);animation:gridMove 20s linear infinite;pointer-events:none;}
+@keyframes gridMove{0%{background-position:0 0;}100%{background-position:0 50px;}}
+.hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;z-index:2;position:relative;}
+.hero-status{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:6px 14px;margin-bottom:2rem;font-size:12px;color:var(--green);}
+.dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;display:inline-block;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,255,136,0.6);}50%{opacity:0.4;box-shadow:0 0 0 8px rgba(0,255,136,0);}}
+.hero-greeting{color:var(--text-dim);font-size:14px;margin-bottom:0.5rem;}
+.hero-greeting span{color:var(--green);}
+
+/* GLITCH NAME */
+.hero-name{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:1rem;}
+.glitch{position:relative;display:inline-block;}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;background:var(--bg);}
+.glitch::before{left:2px;text-shadow:-2px 0 #ff00c1;animation:ga 5s infinite linear alternate-reverse;}
+.glitch::after{left:-2px;text-shadow:-2px 0 #00fff9;animation:gb 5s infinite linear alternate-reverse;}
+@keyframes ga{0%{clip:rect(84px,9999px,12px,0);}25%{clip:rect(14px,9999px,86px,0);}50%{clip:rect(52px,9999px,4px,0);}75%{clip:rect(98px,9999px,32px,0);}100%{clip:rect(65px,9999px,19px,0);}}
+@keyframes gb{0%{clip:rect(24px,9999px,92px,0);}25%{clip:rect(76px,9999px,14px,0);}50%{clip:rect(32px,9999px,54px,0);}75%{clip:rect(88px,9999px,22px,0);}100%{clip:rect(45px,9999px,39px,0);}}
+.cursor-block{display:inline-block;width:12px;height:1em;background:var(--green);margin-left:8px;animation:blink 1s infinite;vertical-align:text-bottom;box-shadow:0 0 10px var(--green);}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+.hero-title{font-size:16px;color:var(--green);margin-bottom:1.5rem;font-weight:500;min-height:24px;}
+.hero-title::before{content:'> ';color:var(--text-dim);}
+.hero-bio{color:var(--text-dim);font-size:14px;max-width:600px;line-height:2;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:4px;font-family:var(--font);font-size:12px;font-weight:700;text-decoration:none;transition:all 0.3s;border:1px solid transparent;text-transform:uppercase;letter-spacing:1px;}
+.btn-primary{background:var(--green);color:#050805;box-shadow:0 0 15px rgba(0,255,136,0.2);}
+.btn-primary:hover{background:var(--green-dim);transform:translateY(-2px);box-shadow:0 6px 25px rgba(0,255,136,0.4);}
+.btn-secondary{background:transparent;color:var(--green);border:1px solid var(--green);}
+.btn-secondary:hover{background:rgba(0,255,136,0.08);transform:translateY(-2px);box-shadow:0 0 15px rgba(0,255,136,0.2);}
+
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem;}
+.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:14px;text-align:center;transition:all 0.3s;}
+.stat-box:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,255,136,0.1);}
+.stat-num{font-size:1.8rem;font-weight:700;color:var(--green);text-shadow:0 0 10px var(--green-glow);}
+.stat-label{font-size:10px;color:var(--text-dim);margin-top:4px;text-transform:uppercase;letter-spacing:1px;}
+
+/* PHOTO */
+.hero-photo-wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem;position:relative;}
+.hero-photo-wrap::before{content:'';position:absolute;width:115%;height:115%;border:1px dashed var(--border);border-radius:50%;animation:spin 20s linear infinite;}
+@keyframes spin{100%{transform:rotate(360deg);}}
+.hero-photo-ring{width:250px;height:250px;border-radius:50%;border:2px solid var(--green);padding:7px;background:var(--bg2);z-index:2;box-shadow:0 0 50px rgba(0,255,136,0.2);}
+.hero-photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;filter:grayscale(15%) contrast(115%);}
+/* ====================================================
+   PHOTO SETUP:
+   1. Save your photo as  photo.jpg  (or photo.png)
+   2. Place it in the SAME folder as index.html
+   3. The <img src="photo.jpg"> tag is already set below
+   4. Delete the .placeholder div if you add a real photo
+   ==================================================== */
+.placeholder{width:100%;height:100%;border-radius:50%;background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--green);font-size:11px;text-align:center;gap:6px;}
+.hero-meta{font-size:11px;color:var(--text-dim);text-align:center;z-index:2;}
+.hero-meta strong{color:var(--green);}
+
+/* SECTIONS */
+section{padding:100px 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.sec-header{margin-bottom:3.5rem;}
+.sec-cmd{font-size:13px;color:var(--text-dim);margin-bottom:0.5rem;}
+.sec-cmd span{color:var(--green);}
+.sec-title{font-size:1.8rem;font-weight:700;color:#fff;border-bottom:1px solid var(--border);padding-bottom:1rem;position:relative;}
+.sec-title::after{content:'';position:absolute;bottom:-1px;left:0;width:50px;height:2px;background:var(--green);}
+
+/* ABOUT */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;}
+.about-text p{color:var(--text-dim);font-size:14px;line-height:2;margin-bottom:1.5rem;}
+.about-text p strong{color:var(--green);}
+.timeline{position:relative;padding-left:2rem;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--border);}
+.tl-item{position:relative;padding:0 0 2rem 1.5rem;}
+.tl-item::before{content:'';position:absolute;left:-24px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--green);box-shadow:0 0 10px var(--green-glow);transition:all 0.3s;}
+.tl-item:hover::before{background:var(--green);}
+.tl-date{font-size:11px;color:var(--text-dim);margin-bottom:4px;}
+.tl-title{font-size:14px;font-weight:600;color:#fff;}
+.tl-sub{font-size:12px;color:var(--green);margin-top:3px;}
+.tl-badge{display:inline-block;font-size:10px;background:rgba(0,255,136,0.08);border:1px solid var(--green);border-radius:2px;padding:2px 8px;color:var(--green);margin-top:6px;font-weight:700;}
+.attrs-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem;}
+.attr-badge{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:11px;color:var(--text-dim);}
+.attr-badge::before{content:'[✓] ';color:var(--green);}
+.lang-box{margin-top:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:1rem 1.2rem;}
+.lang-label{font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.6rem;}
+
+/* SKILLS */
+#skills{background:var(--bg);}
+.marquee-wrap{overflow:hidden;border-top:1px dashed var(--border);border-bottom:1px dashed var(--border);padding:18px 0;margin-bottom:3.5rem;background:var(--bg2);}
+.marquee-track{display:flex;gap:3rem;width:max-content;animation:marquee 28s linear infinite;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--green);white-space:nowrap;text-transform:uppercase;letter-spacing:1px;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:2rem;}
+.skill-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.skill-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--green);transition:height 0.35s ease;}
+.skill-card:hover::before{height:100%;}
+.skill-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+.skill-card-title{font-size:13px;font-weight:700;color:var(--green);margin-bottom:1.2rem;display:flex;align-items:center;gap:8px;}
+.skill-card-title::before{content:'>';color:var(--text-dim);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.tag{background:rgba(0,255,136,0.04);border:1px solid var(--border);border-radius:4px;padding:4px 11px;font-size:11px;color:var(--text-dim);transition:all 0.2s;}
+.tag:hover{border-color:var(--green);color:#050805;background:var(--green);}
+
+/* PROJECTS */
+#projects{background:var(--bg2);}
+.proj-featured{background:linear-gradient(145deg,var(--bg3),var(--bg));border:1px solid var(--green);border-radius:10px;padding:2.5rem;margin-bottom:2.5rem;position:relative;overflow:hidden;display:grid;gap:2rem;}
+@media(min-width:900px){.proj-featured{grid-template-columns:1.1fr 1fr;align-items:start;}}
+.proj-featured::after{content:'CAPSTONE';position:absolute;top:20px;right:-28px;background:var(--green);color:#050805;padding:5px 40px;font-weight:800;font-size:10px;transform:rotate(45deg);letter-spacing:2px;}
+.proj-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--green);background:var(--green-glow);border:1px solid var(--green);border-radius:4px;padding:4px 12px;margin-bottom:1.2rem;}
+.proj-title{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:0.8rem;}
+.proj-sub{font-size:12px;color:var(--text-dim);margin-bottom:1.5rem;font-family:monospace;}
+.proj-metrics{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding:1.2rem;background:rgba(0,255,136,0.03);border:1px dashed var(--border);border-radius:6px;}
+.metric-val{font-size:1.6rem;font-weight:700;color:var(--green);text-shadow:0 0 10px var(--green-glow);}
+.metric-label{font-size:10px;color:var(--text-dim);text-transform:uppercase;}
+.proj-points{list-style:none;margin-bottom:1.5rem;}
+.proj-points li{font-size:13px;color:var(--text-dim);padding:5px 0 5px 1.5rem;position:relative;line-height:1.8;}
+.proj-points li::before{content:'>>';position:absolute;left:0;color:var(--green);font-weight:700;}
+.proj-links{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1rem;}
+
+/* NETGUARD IMAGE SLIDESHOW */
+.ng-slideshow-wrap{display:flex;flex-direction:column;gap:10px;}
+.ng-slideshow{position:relative;width:100%;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg3);cursor:crosshair;}
+.ng-slideshow:hover{border-color:var(--green);box-shadow:0 0 25px var(--green-glow);}
+/* Images stack absolutely; only .active is visible */
+.ng-slideshow img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 0.5s ease;background:var(--bg3);}
+.ng-slideshow img.active{opacity:1;}
+/* Height is set by a transparent spacer so the box resizes to the tallest image */
+.ng-spacer{visibility:hidden;width:100%;display:block;}
+.ng-hud{position:absolute;bottom:10px;right:10px;background:rgba(5,8,5,0.88);border:1px solid var(--green);padding:4px 10px;font-size:11px;color:var(--green);border-radius:4px;pointer-events:none;z-index:5;}
+.ng-hint{font-size:11px;color:var(--text-dim);text-align:center;font-style:italic;}
+
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;}
+.proj-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:2rem;transition:all 0.3s;display:flex;flex-direction:column;}
+.proj-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.4);}
+.proj-card-num{font-size:11px;color:var(--green);margin-bottom:0.8rem;font-family:monospace;}
+.proj-card-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:0.8rem;}
+.proj-card-desc{font-size:13px;color:var(--text-dim);line-height:1.8;flex-grow:1;}
+
+/* CERTS — badge style */
+#certs{background:var(--bg);}
+.cert-issuer-group{margin-bottom:2.5rem;}
+.cig-header{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem;}
+.cig-name{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2px;}
+.cig-line{flex:1;height:1px;background:var(--border);}
+.cig-count{font-size:10px;color:var(--green);background:var(--green-glow);border:1px solid var(--border);border-radius:2px;padding:2px 8px;}
+.cert-badges{display:flex;flex-wrap:wrap;gap:12px;}
+
+/* Badge card */
+.cert-badge-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;display:flex;align-items:center;gap:12px;transition:all 0.3s;min-width:220px;}
+.cert-badge-card:hover{border-color:var(--green);background:var(--bg3);transform:scale(1.03);box-shadow:0 4px 20px rgba(0,255,136,0.1);}
+.cert-badge-img{width:52px;height:52px;object-fit:contain;flex-shrink:0;border-radius:6px;}
+.cert-badge-icon{width:52px;height:52px;border-radius:6px;background:var(--green-glow);border:1px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:inset 0 0 10px rgba(0,255,136,0.2);}
+.cert-body{}
+.cert-name{font-size:12px;font-weight:600;color:#fff;margin-bottom:2px;}
+.cert-tag{font-size:10px;color:var(--green);font-family:monospace;}
+/* Issuer color accents */
+.ci-cisco .cert-badge-icon{border-color:#049fd4;background:rgba(4,159,212,0.1);}
+.ci-cisco .cert-tag{color:#049fd4;}
+.ci-cisco:hover{border-color:#049fd4;}
+.ci-isc2 .cert-badge-icon{border-color:#005b96;background:rgba(0,91,150,0.1);}
+.ci-isc2 .cert-tag{color:#7ec8e3;}
+.ci-isc2:hover{border-color:#7ec8e3;}
+.ci-microsoft .cert-badge-icon{border-color:#0078d4;background:rgba(0,120,212,0.1);}
+.ci-microsoft .cert-tag{color:#4fc3f7;}
+.ci-microsoft:hover{border-color:#4fc3f7;}
+.ci-engenius .cert-badge-icon{border-color:var(--green);background:var(--green-glow);}
+.ci-nextgen .cert-badge-icon{border-color:#a855f7;background:rgba(168,85,247,0.1);}
+.ci-nextgen .cert-tag{color:#c084fc;}
+.ci-nextgen:hover{border-color:#c084fc;}
+
+/* CERT — view button & modal */
+.cert-view-btn{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:10px;font-family:var(--font);color:var(--green);background:transparent;border:1px solid var(--border);border-radius:3px;padding:3px 10px;cursor:pointer;transition:all 0.2s;text-decoration:none;}
+.cert-view-btn:hover{border-color:var(--green);background:var(--green-glow);color:#fff;}
+.cert-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9998;align-items:center;justify-content:center;padding:1rem;}
+.cert-modal-overlay.open{display:flex;}
+.cert-modal{background:var(--bg2);border:1px solid var(--green);border-radius:10px;width:100%;max-width:960px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 60px rgba(0,255,136,0.15);}
+.cert-modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);background:var(--bg3);}
+.cert-modal-title{font-size:13px;font-weight:700;color:var(--green);}
+.cert-modal-close{background:none;border:1px solid var(--border);color:var(--text-dim);font-size:16px;cursor:pointer;border-radius:4px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:var(--font);}
+.cert-modal-close:hover{border-color:var(--green);color:var(--green);}
+.cert-modal-body{flex:1;overflow:hidden;min-height:0;}
+.cert-modal-body iframe{width:100%;height:100%;min-height:75vh;border:none;background:#fff;}
+.cert-modal-footer{padding:10px 20px;border-top:1px solid var(--border);display:flex;gap:10px;background:var(--bg3);}
+.cert-modal-footer a{font-size:11px;font-family:var(--font);color:var(--green);background:var(--green-glow);border:1px solid var(--border);border-radius:3px;padding:4px 14px;text-decoration:none;transition:all 0.2s;}
+.cert-modal-footer a:hover{border-color:var(--green);background:rgba(0,255,136,0.2);}
+
+/* EXPERIENCE */
+#experience{background:var(--bg2);}
+.exp-card{background:linear-gradient(145deg,var(--bg3),var(--bg));border:1px solid var(--border);border-radius:10px;padding:2.5rem;}
+.exp-card:hover{border-color:var(--green);}
+.exp-header{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;}
+.exp-title{font-size:1.1rem;font-weight:700;color:#fff;}
+.exp-org{font-size:13px;color:var(--green);margin-top:4px;}
+.exp-dur{font-size:10px;background:rgba(0,255,136,0.08);border:1px solid var(--green);border-radius:2px;padding:3px 10px;color:var(--green);font-weight:700;white-space:nowrap;align-self:start;}
+
+/* CONTACT */
+#contact{background:var(--bg);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-info p{font-size:14px;color:var(--text-dim);line-height:2;margin-bottom:2rem;}
+.c-link{display:flex;align-items:center;gap:14px;color:var(--text-dim);text-decoration:none;font-size:13px;transition:all 0.3s;margin-bottom:1.2rem;}
+.c-link:hover{color:var(--green);transform:translateX(8px);}
+.c-link .icon{width:38px;height:38px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all 0.3s;}
+.c-link:hover .icon{border-color:var(--green);box-shadow:0 0 12px var(--green-glow);}
+.refs-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:2rem;position:relative;}
+.refs-box::before{content:'DATA_RETRIEVED';position:absolute;top:-10px;right:18px;background:var(--bg3);padding:0 10px;color:var(--green);font-size:10px;border:1px solid var(--border);}
+.ref-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px dashed var(--border);}
+.ref-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.ref-name{font-size:14px;font-weight:700;color:#fff;}
+.ref-role{font-size:12px;color:var(--green);margin:3px 0;}
+.ref-org{font-size:11px;color:var(--text-dim);}
+.ref-contact{font-size:11px;color:var(--text-dim);margin-top:6px;}
+.ref-contact a{color:var(--green);text-decoration:none;}
+.ref-contact a:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:2rem;text-align:center;}
+footer p{font-size:12px;color:var(--text-dim);}
+footer span{color:var(--green);}
+.back-top{color:var(--green);text-decoration:none;font-size:12px;margin-left:1.5rem;font-weight:700;text-transform:uppercase;}
+.back-top:hover{text-shadow:0 0 8px var(--green-glow);}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease-out,transform 0.75s ease-out;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr;}
+  .hero-photo-wrap{order:-1;margin:0 auto;}
+  .hero-actions{justify-content:center;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+  section{padding:70px 1.2rem;}
+  .proj-featured{padding:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">[<span>root@Suhail</span> : ~$]</a>
+    <div class="nav-links">
+      <a href="#about">/about</a>
+      <a href="#skills">/skills</a>
+      <a href="#projects">/projects</a>
+      <a href="#experience">/experience</a>
+      <a href="#certs">/certs</a>
+      <a href="#contact">/contact</a>
+      <a href="mailto:mhmdsuhail500@gmail.com" class="nav-hire">EXECUTE: HIRE</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text fade-in">
+      <div class="hero-status"><span class="dot"></span>SYSTEM ONLINE &nbsp;|&nbsp; PID: 2026</div>
+      <p class="hero-greeting">Initializing user protocol... <span>[ Success ]</span></p>
+      <h1 class="hero-name">
+        <span class="glitch" data-text="Mohamad Suhail">Mohamad Suhail</span><span class="cursor-block"></span>
+      </h1>
+      <p class="hero-title" id="typeTitle">Network Administrator</p>
+      <p class="hero-bio">Network Technician with expertise in enterprise administration, IT infrastructure management, and <strong style="color:var(--green)">AI-driven automation</strong>. Reduced manual auditing time by <strong style="color:var(--green)">90%</strong>. Skilled in Cisco, Windows Server (2019–2025), and Linux.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">DEPLOY /PROJECTS</a>
+        <a href="https://github.com/m-suhail-rahuman" target="_blank" class="btn btn-secondary">VIEW GITHUB</a>
+        <a href="#contact" class="btn btn-secondary">SSH --CONNECT</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box"><div class="stat-num">90%</div><div class="stat-label">Audit Time Cut</div></div>
+        <div class="stat-box"><div class="stat-num">98%</div><div class="stat-label">Network Uptime</div></div>
+        <div class="stat-box"><div class="stat-num">10+</div><div class="stat-label">Certifications</div></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap fade-in">
+      <div class="hero-photo-ring">
+        <img src="photo.png" alt="Mohamad Suhail">
+      </div>
+      <p class="hero-meta"><strong>ACCESS LEVEL: root</strong><br>📍 Ratmalana, Colombo, Sri Lanka</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <p class="sec-cmd"><span>root@SUHAIL:~$</span> cat /usr/bin/whoami</p>
+      <h2 class="sec-title">System Architecture (About Me)</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>B.Tech undergraduate in <strong>Network Technology</strong> at the University of Vocational Technology, Sri Lanka (graduating 2026), with hands-on enterprise experience as a <strong>Network Administrator</strong> at OpenArcCampus, Colombo.</p>
+        <p>I specialize in <strong>AI-driven network automation</strong>. My capstone project NetGuard reduced manual audit time from 8 hours to under 20 minutes. I build systems where machine intelligence handles tedious security assessments so engineers can focus on architecture.</p>
+        <p>Expertise spans <strong>Cisco routing/switching, Windows Server 2022, Linux, Active Directory</strong>, and cloud environments (Azure/AWS). Also experienced coordinating international certification testing as Test Center Administrator.</p>
+        <div class="attrs-grid">
+          <span class="attr-badge">High-Pressure Decision Making</span>
+          <span class="attr-badge">Analytical Problem Solving</span>
+          <span class="attr-badge">Attention to Detail & Compliance</span>
+          <span class="attr-badge">Multilingual Technical Support</span>
+          <span class="attr-badge">Technical Documentation</span>
+          <span class="attr-badge">Adaptability & Continuous Learning</span>
+        </div>
+        <div class="lang-box">
+          <div class="lang-label">Languages</div>
+          <div class="skill-tags">
+            <span class="tag">Tamil (Native)</span>
+            <span class="tag">Sinhala (Fluent)</span>
+            <span class="tag">English (Professional)</span>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <p style="font-size:12px;color:var(--text-dim);margin-bottom:1.5rem;">$ git log --graph --oneline</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">2022 – 2026 (Ongoing)</div>
+            <div class="tl-title">B.Tech Network Technology</div>
+            <div class="tl-sub">University of Vocational Technology, Sri Lanka</div>
+            <span class="tl-badge">ONGOING</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">~2024 – 2025 · 6 Months</div>
+            <div class="tl-title">Network Admin & Test Center Admin</div>
+            <div class="tl-sub">OpenArcCampus, Colombo</div>
+            <span class="tl-badge">EXPERIENCE</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2024</div>
+            <div class="tl-title">Certified in Cybersecurity (CC)</div>
+            <div class="tl-sub">ISC2</div>
+            <span class="tl-badge">CERTIFIED</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2024</div>
+            <div class="tl-title">EnGenius ECWP / ECNP / ECNS</div>
+            <div class="tl-sub">EnGenius Technologies</div>
+            <span class="tl-badge">CERTIFIED</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2020</div>
+            <div class="tl-title">G.C.E Advanced Level — Technology Stream</div>
+            <div class="tl-sub">Passed with B and 2C's</div>
+            <span class="tl-badge">COMPLETED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <p class="sec-cmd"><span>root@SUHAIL:~$</span> bash /opt/skill_scanner.sh</p>
+      <h2 class="sec-title">Core Competencies</h2>
+    </div>
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span class="marquee-item">◈ OSPF</span><span class="marquee-item">◈ BGP</span><span class="marquee-item">◈ EIGRP</span><span class="marquee-item">◈ VLAN</span><span class="marquee-item">◈ STP / MST</span><span class="marquee-item">◈ VPN</span><span class="marquee-item">◈ Cisco IOS</span><span class="marquee-item">◈ VyOS</span><span class="marquee-item">◈ GNS3</span><span class="marquee-item">◈ Windows Server 2022</span><span class="marquee-item">◈ Active Directory</span><span class="marquee-item">◈ Linux Admin</span><span class="marquee-item">◈ Python</span><span class="marquee-item">◈ Machine Learning</span><span class="marquee-item">◈ Azure</span><span class="marquee-item">◈ AWS</span><span class="marquee-item">◈ Cybersecurity</span><span class="marquee-item">◈ Firewalls</span><span class="marquee-item">◈ IDS / IPS</span><span class="marquee-item">◈ MicroPython</span><span class="marquee-item">◈ PHP / SQL</span>
+        <span class="marquee-item">◈ OSPF</span><span class="marquee-item">◈ BGP</span><span class="marquee-item">◈ EIGRP</span><span class="marquee-item">◈ VLAN</span><span class="marquee-item">◈ STP / MST</span><span class="marquee-item">◈ VPN</span><span class="marquee-item">◈ Cisco IOS</span><span class="marquee-item">◈ VyOS</span><span class="marquee-item">◈ GNS3</span><span class="marquee-item">◈ Windows Server 2022</span><span class="marquee-item">◈ Active Directory</span><span class="marquee-item">◈ Linux Admin</span><span class="marquee-item">◈ Python</span><span class="marquee-item">◈ Machine Learning</span><span class="marquee-item">◈ Azure</span><span class="marquee-item">◈ AWS</span><span class="marquee-item">◈ Cybersecurity</span><span class="marquee-item">◈ Firewalls</span><span class="marquee-item">◈ IDS / IPS</span><span class="marquee-item">◈ MicroPython</span><span class="marquee-item">◈ PHP / SQL</span>
+      </div>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-card">
+        <div class="skill-card-title">Network Technologies</div>
+        <div class="skill-tags">
+          <span class="tag">OSPF</span><span class="tag">BGP</span><span class="tag">EIGRP</span><span class="tag">VLAN</span><span class="tag">STP</span><span class="tag">MST</span><span class="tag">VTP</span><span class="tag">Firewalls</span><span class="tag">VPN</span><span class="tag">IDS/IPS</span><span class="tag">Cisco IOS</span><span class="tag">VyOS</span><span class="tag">GNS3</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">System Administration</div>
+        <div class="skill-tags">
+          <span class="tag">Windows Server 2019</span><span class="tag">WS 2022</span><span class="tag">WS 2025</span><span class="tag">Linux</span><span class="tag">Active Directory</span><span class="tag">Group Policy</span><span class="tag">DNS / DHCP</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Cloud & Security</div>
+        <div class="skill-tags">
+          <span class="tag">Microsoft Azure</span><span class="tag">AWS</span><span class="tag">Cybersecurity</span><span class="tag">Threat Analysis</span><span class="tag">CVE Detection</span><span class="tag">CIS Benchmark</span><span class="tag">NIST SP 800-115</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Programming & Automation</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">MicroPython</span><span class="tag">Machine Learning</span><span class="tag">Random Forest</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Network Scripting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <p class="sec-cmd"><span>root@SUHAIL:~$</span> ls /var/www/projects</p>
+      <h2 class="sec-title">Key Projects</h2>
+    </div>
+
+    <!-- NETGUARD FEATURED -->
+    <div class="proj-featured fade-in">
+      <!-- LEFT: info -->
+      <div>
+        <div class="proj-badge"><span class="dot"></span> Active · Capstone</div>
+        <h3 class="proj-title">NetGuard: AI-Driven Automated Network Security Assessment</h3>
+        <p class="proj-sub">Technologies: Python · ML (Supervised) · Cisco IOS · VyOS · GNS3</p>
+        <div class="proj-metrics">
+          <div class="metric"><div class="metric-val">90%</div><div class="metric-label">Audit Time ↓</div></div>
+          <div class="metric"><div class="metric-val">8h→20m</div><div class="metric-label">Manual→Auto</div></div>
+          <div class="metric"><div class="metric-val">98%</div><div class="metric-label">Topo Accuracy</div></div>
+          <div class="metric"><div class="metric-val">40</div><div class="metric-label">Security Checks</div></div>
+        </div>
+        <ul class="proj-points">
+          <li>Enterprise-grade security automation reducing manual audit from 8 hours to under 20 minutes.</li>
+          <li>Automated network discovery engine mapping entire topology from single seed IP with 98% accuracy.</li>
+          <li>Random forest classifier assigns risk levels (Critical/High/Medium/Low) per CIS Benchmark &amp; NIST SP 800-115.</li>
+          <li>40 comprehensive checks including CVE detection, automated remediation script generation.</li>
+          <li>Web dashboard with PDF report generation and automated email alerting.</li>
+        </ul>
+        <div class="skill-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">Cisco IOS</span><span class="tag">VyOS</span><span class="tag">GNS3</span><span class="tag">CIS Benchmark</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/m-suhail-rahuman/Netguard" target="_blank" class="btn btn-primary" style="font-size:11px;padding:8px 16px;">VIEW ON GITHUB</a>
+          <a href="https://github.com/m-suhail-rahuman" target="_blank" class="btn btn-secondary" style="font-size:11px;padding:8px 16px;">ALL REPOS</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: SLIDESHOW -->
+      <div>
+        <div class="ng-slideshow-wrap">
+          <div class="ng-slideshow" id="ngSlider">
+           <img src="netguard/Screenshot (131).png" alt="NetGuard screenshot 1" class="active">
+<img src="netguard/Screenshot (132).png" alt="NetGuard screenshot 2">
+<img src="netguard/Screenshot (133).png" alt="NetGuard screenshot 3">
+<img src="netguard/Screenshot (134).png" alt="NetGuard screenshot 4">
+<img src="netguard/Screenshot (135).png" alt="NetGuard screenshot 5">
+<img src="netguard/Screenshot (136).png" alt="NetGuard screenshot 6">
+<img src="netguard/Screenshot (137).png" alt="NetGuard screenshot 7">
+<img src="netguard/Screenshot (138).png" alt="NetGuard screenshot 8">
+<img src="netguard/Screenshot (139).png" alt="NetGuard screenshot 9">
+<img src="netguard/Screenshot (140).png" alt="NetGuard screenshot 10">
+<img src="netguard/Screenshot (141).png" alt="NetGuard screenshot 11">
+<img src="netguard/Screenshot (142).png" alt="NetGuard screenshot 12">
+<img src="netguard/Screenshot (143).png" alt="NetGuard screenshot 13">
+<img src="netguard/Screenshot (144).png" alt="NetGuard screenshot 14">
+<img src="netguard/Screenshot (145).png" alt="NetGuard screenshot 15">
+<img src="netguard/Screenshot (146).png" alt="NetGuard screenshot 16">
+<img src="netguard/Screenshot (147).png" alt="NetGuard screenshot 17">
+<img src="netguard/Screenshot (148).png" alt="NetGuard screenshot 18">
+<img src="netguard/Screenshot (149).png" alt="NetGuard screenshot 19">
+<img src="netguard/Screenshot (150).png" alt="NetGuard screenshot 20">
+<img src="netguard/Screenshot (151).png" alt="NetGuard screenshot 21">
+            <!-- spacer keeps box height to the tallest loaded image -->
+            <img class="ng-spacer" src="netguard/Screenshot (131).png" alt="" aria-hidden="true" style="position:relative;opacity:0;pointer-events:none;">
+            <div class="ng-hud" id="ngHud">HOVER TO PREVIEW (1 / 21)</div>
+          </div>
+          <p class="ng-hint">◈ Hover to Image</p>
+        </div>
+      </div>
+    </div><!-- /proj-featured -->
+
+    <!-- OTHER PROJECTS -->
+    <div class="proj-grid fade-in">
+      <div class="proj-card">
+        <div class="proj-card-num">EXEC: 002</div>
+        <h4 class="proj-card-title">Weather &amp; Light Monitoring IoT System</h4>
+        <p class="proj-card-desc">IoT solution using MicroPython for real-time environmental monitoring with cloud integration for data visualization and analysis.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">MicroPython</span><span class="tag">IoT</span><span class="tag">Cloud APIs</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-card-num">EXEC: 003</div>
+        <h4 class="proj-card-title">Parcel Management System</h4>
+        <p class="proj-card-desc">Full-stack web application for tracking parcel logistics with real-time status updates mapped across an entire delivery pipeline.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-card-num">EXEC: 004</div>
+        <h4 class="proj-card-title">Enterprise Server Management</h4>
+        <p class="proj-card-desc">Configured and optimized Windows/Linux server environments with security protocols, performance monitoring, and automated backup systems.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">Windows Server</span><span class="tag">Linux</span><span class="tag">Bash</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <p class="sec-cmd"><span>root@SUHAIL:~$</span> cat /var/log/experience.json</p>
+      <h2 class="sec-title">Professional Experience</h2>
+    </div>
+    <div class="exp-card fade-in">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Network Administrator Cum Test Center Administrator</div>
+          <div class="exp-org">OpenArcCampus, Colombo</div>
+        </div>
+        <span class="exp-dur">6 MONTHS</span>
+      </div>
+      <ul class="proj-points">
+        <li><strong style="color:#fff;">Infrastructure Management:</strong> Administered enterprise network infrastructure for 40+ students and 10+ staff, maintaining 98% uptime through proactive monitoring.</li>
+        <li><strong style="color:#fff;">Security &amp; Segmentation:</strong> Configured Cisco routers, switches, and wireless APs with VLAN segmentation, reducing unauthorized access attempts by 75%.</li>
+        <li><strong style="color:#fff;">System Administration:</strong> Managed Windows Server 2022 environments including Active Directory, DNS, and DHCP for 50+ user accounts.</li>
+        <li><strong style="color:#fff;">Efficiency Improvements:</strong> Optimized diagnostic procedures to reduce average network troubleshooting time significantly.</li>
+        <li><strong style="color:#fff;">Test Center Admin:</strong> Coordinated international certification testing standards and candidate management.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CERTS ═══════════════════════ -->
+<section id="certs">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <p class="sec-cmd"><span>root@SUHAIL:~$</span> find . -name "*.cert" --issuer</p>
+      <h2 class="sec-title">Authentication Keys (Certs)</h2>
+    </div>
+
+    <!-- CISCO GROUP -->
+    <div class="cert-issuer-group fade-in">
+      <div class="cig-header">
+        <span class="cig-name" style="color:#049fd4;">CISCO</span>
+        <div class="cig-line"></div>
+        <span class="cig-count" style="color:#049fd4;border-color:rgba(4,159,212,0.3);">6 CERTS</span>
+      </div>
+      <div class="cert-badges">
+        <div class="cert-badge-card ci-cisco">
+          <div class="cert-badge-icon" style="font-size:1.4rem;font-weight:800;color:#049fd4;">C</div>
+          <div class="cert-body">
+            <div class="cert-name">Ethical Hacker</div>
+            <div class="cert-tag" style="color:#049fd4;">#ETHICAL-HACKER</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/EthicalHacker.pdf','Cisco — Ethical Hacker')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-cisco">
+          <div class="cert-badge-icon" style="font-size:1.4rem;font-weight:800;color:#049fd4;">C</div>
+          <div class="cert-body">
+            <div class="cert-name">Endpoint Security</div>
+            <div class="cert-tag" style="color:#049fd4;">#ENDPOINT-SEC</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/EndpointSecurity.pdf','Cisco — Endpoint Security')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-cisco">
+          <div class="cert-badge-icon" style="font-size:1.4rem;font-weight:800;color:#049fd4;">C</div>
+          <div class="cert-body">
+            <div class="cert-name">Introduction to Cybersecurity</div>
+            <div class="cert-tag" style="color:#049fd4;">#CYBERSEC</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/Introduction_to_Cybersecurity_Badge20241215-27-wuvmym.pdf','Cisco — Introduction to Cybersecurity')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-cisco">
+          <div class="cert-badge-icon" style="font-size:1.4rem;font-weight:800;color:#049fd4;">C</div>
+          <div class="cert-body">
+            <div class="cert-name">Introduction to IoT</div>
+            <div class="cert-tag" style="color:#049fd4;">#IOT</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/Introduction_to_IoT_Badge20240902-7-mzq7kv.pdf','Cisco — Introduction to IoT')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-cisco">
+          <div class="cert-badge-icon" style="font-size:1.4rem;font-weight:800;color:#049fd4;">C</div>
+          <div class="cert-body">
+            <div class="cert-name">IT Support Specialist Career Path</div>
+            <div class="cert-tag" style="color:#049fd4;">#IT-SUPPORT</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/ITSupportSpecialistCareerPath.pdf','Cisco — IT Support Specialist')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-cisco">
+          <div class="cert-badge-icon" style="font-size:1.4rem;font-weight:800;color:#049fd4;">C</div>
+          <div class="cert-body">
+            <div class="cert-name">Network Technician Career Path</div>
+            <div class="cert-tag" style="color:#049fd4;">#NET-TECH</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/NetworkTechnicianCareerPathUpdate20250130-27-ke3uz6.pdf','Cisco — Network Technician Career Path')">▶ VIEW CERT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ISC2 GROUP -->
+    <div class="cert-issuer-group fade-in">
+      <div class="cig-header">
+        <span class="cig-name" style="color:#7ec8e3;">ISC2</span>
+        <div class="cig-line"></div>
+        <span class="cig-count" style="color:#7ec8e3;border-color:rgba(126,200,227,0.3);">6 CERTS</span>
+      </div>
+      <div class="cert-badges">
+        <div class="cert-badge-card ci-isc2">
+          <div class="cert-badge-icon" style="font-size:0.85rem;font-weight:800;color:#7ec8e3;">ISC²</div>
+          <div class="cert-body">
+            <div class="cert-name">Certified in Cybersecurity (CC)</div>
+            <div class="cert-tag" style="color:#7ec8e3;">#CC · ISC2-VERIFIED</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/CC Certified in Cybersecurity (CC).pdf','ISC2 — Certified in Cybersecurity (CC)')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-isc2">
+          <div class="cert-badge-icon" style="font-size:0.85rem;font-weight:800;color:#7ec8e3;">ISC²</div>
+          <div class="cert-body">
+            <div class="cert-name">CC Domain 1</div>
+            <div class="cert-tag" style="color:#7ec8e3;">#CC-D1 · SECURITY-PRINCIPLES</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/CC Domain 1.pdf','ISC2 — CC Domain 1')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-isc2">
+          <div class="cert-badge-icon" style="font-size:0.85rem;font-weight:800;color:#7ec8e3;">ISC²</div>
+          <div class="cert-body">
+            <div class="cert-name">CC Domain 2</div>
+            <div class="cert-tag" style="color:#7ec8e3;">#CC-D2 · INCIDENT-RESPONSE</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/CC Domain 2.pdf','ISC2 — CC Domain 2')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-isc2">
+          <div class="cert-badge-icon" style="font-size:0.85rem;font-weight:800;color:#7ec8e3;">ISC²</div>
+          <div class="cert-body">
+            <div class="cert-name">CC Domain 3</div>
+            <div class="cert-tag" style="color:#7ec8e3;">#CC-D3 · ACCESS-CONTROL</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/CC Domain 3.pdf','ISC2 — CC Domain 3')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-isc2">
+          <div class="cert-badge-icon" style="font-size:0.85rem;font-weight:800;color:#7ec8e3;">ISC²</div>
+          <div class="cert-body">
+            <div class="cert-name">CC Domain 4</div>
+            <div class="cert-tag" style="color:#7ec8e3;">#CC-D4 · NETWORK-SECURITY</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/CC Domain 4.pdf','ISC2 — CC Domain 4')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-isc2">
+          <div class="cert-badge-icon" style="font-size:0.85rem;font-weight:800;color:#7ec8e3;">ISC²</div>
+          <div class="cert-body">
+            <div class="cert-name">CC Domain 5</div>
+            <div class="cert-tag" style="color:#7ec8e3;">#CC-D5 · SECURITY-OPS</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/CC Domain 5.pdf','ISC2 — CC Domain 5')">▶ VIEW CERT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MICROSOFT GROUP -->
+    <div class="cert-issuer-group fade-in">
+      <div class="cig-header">
+        <span class="cig-name" style="color:#4fc3f7;">MICROSOFT</span>
+        <div class="cig-line"></div>
+        <span class="cig-count" style="color:#4fc3f7;border-color:rgba(79,195,247,0.3);">1 CERT</span>
+      </div>
+      <div class="cert-badges">
+        <div class="cert-badge-card ci-microsoft">
+          <div class="cert-badge-icon" style="font-size:1.2rem;color:#4fc3f7;">⊞</div>
+          <div class="cert-body">
+            <div class="cert-name">Azure Fundamentals</div>
+            <div class="cert-tag" style="color:#4fc3f7;">#AZ-900 · AZURE</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/azure fundemental.pdf','Microsoft — Azure Fundamentals')">▶ VIEW CERT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGENIUS GROUP -->
+    <div class="cert-issuer-group fade-in">
+      <div class="cig-header">
+        <span class="cig-name" style="color:var(--green);">ENGENIUS</span>
+        <div class="cig-line"></div>
+        <span class="cig-count">3 CERTS</span>
+      </div>
+      <div class="cert-badges">
+        <div class="cert-badge-card ci-engenius">
+          <div class="cert-badge-icon">📶</div>
+          <div class="cert-body">
+            <div class="cert-name">ECWP — Wireless Professional</div>
+            <div class="cert-tag">#ECWP · WIRELESS</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/certificate-engenius-certified-wireless-professional-62d79d5be7cc397ad00ab374.pdf','EnGenius — ECWP Wireless Professional')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-engenius">
+          <div class="cert-badge-icon">🔗</div>
+          <div class="cert-body">
+            <div class="cert-name">ECNP — Network Professional</div>
+            <div class="cert-tag">#ECNP · NETWORKING</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/certificate-engenius-certified-network-professional-62d7b1b8df5726a872017c27.pdf','EnGenius — ECNP Network Professional')">▶ VIEW CERT</button>
+          </div>
+        </div>
+        <div class="cert-badge-card ci-engenius">
+          <div class="cert-badge-icon">🖧</div>
+          <div class="cert-body">
+            <div class="cert-name">ECNS — Network Specialist</div>
+            <div class="cert-tag">#ECNS · SWITCHING</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/certificate-engenius-certified-network-specialist-62d121ad7cade00c64055bb8 (1).pdf','EnGenius — ECNS Network Specialist')">▶ VIEW CERT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEXTGEN GROUP -->
+    <div class="cert-issuer-group fade-in">
+      <div class="cig-header">
+        <span class="cig-name" style="color:#c084fc;">NEXTGEN CAMPUS</span>
+        <div class="cig-line"></div>
+        <span class="cig-count" style="color:#c084fc;border-color:rgba(192,132,252,0.3);">1 CERT</span>
+      </div>
+      <div class="cert-badges">
+        <div class="cert-badge-card ci-nextgen">
+          <div class="cert-badge-icon" style="font-size:1.3rem;color:#c084fc;">☁</div>
+          <div class="cert-body">
+            <div class="cert-name">Cloud Foundations for IT Professionals</div>
+            <div class="cert-tag" style="color:#c084fc;">#CLOUD-FOUNDATIONS</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/Cloud Foundations for Aspiring IT Professionals Cartificate_Part94.pdf','NextGen Campus — Cloud Foundations')">▶ VIEW CERT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINUX / OTHER GROUP -->
+    <div class="cert-issuer-group fade-in">
+      <div class="cig-header">
+        <span class="cig-name" style="color:#fbbf24;">OTHER</span>
+        <div class="cig-line"></div>
+        <span class="cig-count" style="color:#fbbf24;border-color:rgba(251,191,36,0.3);">1 CERT</span>
+      </div>
+      <div class="cert-badges">
+        <div class="cert-badge-card" style="border-color:rgba(251,191,36,0.3);">
+          <div class="cert-badge-icon" style="border-color:#fbbf24;background:rgba(251,191,36,0.08);font-size:1.3rem;">🐧</div>
+          <div class="cert-body">
+            <div class="cert-name">Kali Linux Basics</div>
+            <div class="cert-tag" style="color:#fbbf24;">#LINUX · KALI</div>
+            <button class="cert-view-btn" onclick="openCert('certificates/kali linux basics.pdf','Kali Linux Basics')">▶ VIEW CERT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERT MODAL VIEWER -->
+<div class="cert-modal-overlay" id="certModal" onclick="closeCertOnOverlay(event)">
+  <div class="cert-modal">
+    <div class="cert-modal-header">
+      <span class="cert-modal-title" id="certModalTitle">Certificate</span>
+      <button class="cert-modal-close" onclick="closeCert()">✕</button>
+    </div>
+    <div class="cert-modal-body">
+      <iframe id="certModalFrame" src="" title="Certificate"></iframe>
+    </div>
+    <div class="cert-modal-footer">
+      <a id="certModalDownload" href="#" download>⬇ DOWNLOAD PDF</a>
+      <a id="certModalOpen" href="#" target="_blank">↗ OPEN IN NEW TAB</a>
+      <button onclick="closeCert()" style="margin-left:auto;background:none;border:1px solid var(--border);color:var(--text-dim);font-family:var(--font);font-size:11px;border-radius:3px;padding:4px 14px;cursor:pointer;">CLOSE</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <p class="sec-cmd"><span>root@Suhail:~$</span> ping -c 4 contact_server</p>
+      <h2 class="sec-title">Establish Connection</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <p>Actively seeking Network Administrator or IT Infrastructure roles where I can leverage AI-driven automation to enhance enterprise security and efficiency. Open to internships, full-time, and collaboration. Let's optimize your network.</p>
+        <a href="mailto:mhmdsuhail500@gmail.com" class="c-link"><span class="icon">✉</span> mhmdsuhail500@gmail.com</a>
+        <a href="tel:+94775055244" class="c-link"><span class="icon">📞</span> +94 775 055 244</a>
+        <a href="https://linkedin.com/in/mohamadsuhail" target="_blank" class="c-link"><span class="icon">in</span> linkedin.com/in/mohamadsuhail</a>
+        <a href="https://github.com/m-suhail-rahuman" target="_blank" class="c-link"><span class="icon">⌥</span> github.com/m-suhail-rahuman</a>
+        <span class="c-link"><span class="icon">📍</span> Ratmalana, Colombo, Sri Lanka</span>
+      </div>
+      <div class="refs-box fade-in">
+        <p style="font-size:12px;color:var(--text-dim);margin-bottom:1.5rem;font-family:monospace;">$ grep -i "references" cv.txt</p>
+        <div class="ref-item">
+          <div class="ref-name">Mr. Rajitha Wedage</div>
+          <div class="ref-role">Lecturer (Probationary) — Dept. of Networking</div>
+          <div class="ref-org">Faculty of IT, University of Vocational Technology</div>
+          <div class="ref-contact"><a href="tel:+94716570701">+94 716 570 701</a> · <a href="mailto:rajitha.wedage@uovt.ac.lk">rajitha.wedage@uovt.ac.lk</a></div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-name">Mr. T. Uruthiran</div>
+          <div class="ref-role">Head of Department — Dept. of Software</div>
+          <div class="ref-org">Faculty of IT, University of Vocational Technology</div>
+          <div class="ref-contact"><a href="tel:+94716019762">+94 716 019 762</a> · <a href="mailto:uruthiran@uovt.ac.lk">uruthiran@uovt.ac.lk</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>root@Suhail:~$ echo <span>"System Architecture by Mohamad Suhail, 2026"</span> &amp;&amp; exit &nbsp;<a href="#hero" class="back-top">[ ↑ RETURN 0 ]</a></p>
+</footer>
+
+<script>
+// ── Fade in on scroll ──────────────────────────
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
+},{threshold:0.12});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// ── Typewriter hero title ──────────────────────
+(function(){
+  const titles=['Network Administrator','Network Technician','AI Automation Engineer','Cisco & Linux Specialist'];
+  let ti=0,ci=0,del=false;
+  const el=document.getElementById('typeTitle');
+  if(!el) return;
+  setInterval(()=>{
+    const t=titles[ti];
+    if(!del){ci++;if(ci>t.length){del=true;return;}}
+    else{ci--;if(ci<1){del=false;ti=(ti+1)%titles.length;return;}}
+    el.textContent=t.slice(0,ci);
+  },del?45:90);
+})();
+
+// ── Certificate Modal ──────────────────────────────────
+function openCert(path, title){
+  const modal = document.getElementById('certModal');
+  document.getElementById('certModalTitle').textContent = title;
+  document.getElementById('certModalFrame').src = path;
+  document.getElementById('certModalDownload').href = path;
+  document.getElementById('certModalDownload').download = path.split('/').pop();
+  document.getElementById('certModalOpen').href = path;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCert(){
+  const modal = document.getElementById('certModal');
+  modal.classList.remove('open');
+  document.getElementById('certModalFrame').src = '';
+  document.body.style.overflow = '';
+}
+function closeCertOnOverlay(e){
+  if(e.target === document.getElementById('certModal')) closeCert();
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCert(); });
+
+// ── NetGuard Slideshow (hover = play, leave = pause) ──
+(function(){
+  const slider = document.getElementById('ngSlider');
+  const hud    = document.getElementById('ngHud');
+  if(!slider||!hud) return;
+
+  // Only count img tags that are NOT the spacer
+  const imgs = Array.from(slider.querySelectorAll('img')).filter(i=>!i.classList.contains('ng-spacer'));
+  let idx=0, timer=null;
+
+  function show(n){
+    imgs.forEach(i=>i.classList.remove('active'));
+    imgs[n].classList.add('active');
+    hud.textContent='RUNNING PREVIEW ('+( n+1)+' / '+imgs.length+')';
+  }
+
+  slider.addEventListener('mouseenter',()=>{
+    timer=setInterval(()=>{
+      idx=(idx+1)%imgs.length;
+      show(idx);
+    },1000);
+  });
+  slider.addEventListener('mouseleave',()=>{
+    clearInterval(timer);
+    hud.textContent='PAUSED ('+(idx+1)+' / '+imgs.length+') — HOVER TO RESUME';
+  });
+})();
+</script>
+</body>
+</html>
